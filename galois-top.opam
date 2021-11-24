@@ -1,0 +1,22 @@
+synopsis:     "Formal proofs of 'Reaching on the top of Galois theory'"
+description:  "Provide formal proofs of the book 'Reaching on the top of Galois theory' (2013, ISBN 978-89-6139-065-1) using ssreflect & math-comp."
+name:         "galois-top"
+opam-version: "2.0"
+maintainer:   "mersshs@gmail.com"
+authors:      "Ho Young Jhoo"
+homepage:     "https://github.com/MerHS/galois-top"
+bug-reports:  "https://github.com/MerHS/galois-top/issues"
+dev-repo:     "git+https://github.com/MerHS/galois-top"
+license:      "MIT"
+
+depends: [
+  "ocaml"         { >= "4.11.1"            }
+  "coq"           { >= "8.12.0"            }
+  "dune"          { >= "2.8.0"             }
+  "coq-mathcomp-ssreflect" { >= "1.13.0"   }
+  "coq-mathcomp-algebra" { >= "1.13.0"   }
+  "coq-mathcomp-fingroup" { >= "1.13.0"   }
+  "coq-mathcomp-solvable" { >= "1.13.0"   }
+]
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
